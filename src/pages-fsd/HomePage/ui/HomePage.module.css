@@ -1,0 +1,14 @@
+.HomePage {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  font-family: var(--font-geist-sans);
+}
+
+.HomePage-main {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  padding: 1rem;
+  overflow: hidden;
+}

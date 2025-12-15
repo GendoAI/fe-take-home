@@ -1,0 +1,36 @@
+.Canvas {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.Canvas-status {
+  position: absolute;
+  bottom: var(--spacing-md);
+  left: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.Canvas-statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-danger);
+  transition: background-color var(--transition-normal);
+}
+
+.Canvas-statusDot[data-connected='true'] {
+  background-color: #22c55e;
+}
+
+.Canvas-statusText {
+  text-transform: capitalize;
+}

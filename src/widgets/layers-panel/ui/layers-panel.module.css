@@ -1,0 +1,126 @@
+/* LayersPanel */
+.LayersPanel {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  height: 100%;
+  background-color: var(--color-bg-secondary);
+  border-left: 1px solid var(--color-border);
+}
+
+.LayersPanel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.LayersPanel-headerTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--color-text-secondary);
+}
+
+.LayersPanel-title {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.LayersPanel-count {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  background-color: var(--color-bg-tertiary);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.LayersPanel-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-sm);
+}
+
+.LayersPanel-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+.LayersPanel-emptyHint {
+  font-size: 12px;
+  margin-top: var(--spacing-xs);
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+/* LayerItem */
+.LayerItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  margin-bottom: var(--spacing-xs);
+}
+
+.LayerItem:hover {
+  background-color: var(--color-bg-tertiary);
+}
+
+.LayerItem_selected {
+  background-color: var(--color-bg-tertiary);
+  outline: 1px solid var(--color-accent);
+  outline-offset: -1px;
+}
+
+.LayerItem-thumbnail {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-primary);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.LayerItem-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.LayerItem-name {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.LayerItem-actions {
+  display: flex;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.LayerItem:hover .LayerItem-actions {
+  opacity: 1;
+}
+
+.LayerItem-deleteButton:hover {
+  color: var(--color-danger) !important;
+}

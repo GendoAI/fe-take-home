@@ -5,7 +5,7 @@ import { cn } from '@/shared/lib';
 import { Button } from '@/shared/ui';
 import { Icon } from '@/shared/ui';
 import type { Layer } from '@/entities/layer';
-import styles from './layers-panel.module.css';
+import styles from './LayerItem.module.css';
 
 const cnItem = cn('LayerItem', styles);
 
@@ -74,11 +74,11 @@ export const LayerItem = observer(function LayerItem({
         className={cnItem('thumbnail')}
       />
 
-      <div className={cnItem('info')}>
-        <span className={cnItem('name')}>{layer.name}</span>
+      <div className={cnItem('Info')}>
+        <span className={cnItem('Name')}>{layer.name}</span>
       </div>
 
-      <div className={cnItem('actions')}>
+      <div className={cnItem('Actions')}>
         <Button
           variant="ghost"
           size="sm"
@@ -105,7 +105,7 @@ export const LayerItem = observer(function LayerItem({
           icon
           onClick={handleDelete}
           title="Delete layer"
-          className={cnItem('deleteButton')}
+          className={cnItem('DeleteButton')}
         >
           <Icon name="trash" size={14} />
         </Button>

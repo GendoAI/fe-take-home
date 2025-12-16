@@ -7,4 +7,4 @@ export type {
   LayerReorderedPayload,
 } from './model/types';
 
-export { LayersStore, layersStore } from './model/store';
+export { LayersStore, layersStore } from './model/layersStore';

@@ -45,13 +45,17 @@ pnpm run dev
 
 ### Core Requirements
 
-#### 1. Implement the Layers Store (`src/stores/LayersStore.ts`)
+#### 1. Implement the Layers Store (`src/entities/layer/model/layersStore.ts`)
 
 Complete the MobX store that manages canvas layers. You'll need state for tracking layers and which one is selected, plus actions for adding, removing, updating positions, selecting, and reordering layers.
 
 Think about how to efficiently derive sorted layers and the currently selected layer.
 
-#### 2. Implement ImageLayer Component (`src/features/canvas/ui/ImageLayer.tsx`)
+#### 2. Implement Upload Functionality (`src/features/upload/ui/UploadButton.tsx`)
+
+The upload button should allow users to add images to the canvas. Think about file validation, generating unique IDs, and how the new layer integrates with your store.
+
+#### 3. Implement ImageLayer Component (`src/widgets/canvas/ui/ImageLayer.tsx`)
 
 Create a React Three Fiber component that renders an image layer on the canvas:
 
@@ -63,11 +67,7 @@ Create a React Three Fiber component that renders an image layer on the canvas:
 
 Consider what cleanup is needed when the component unmounts.
 
-#### 3. Implement Upload Functionality (`src/features/toolbar/ui/UploadButton.tsx`)
-
-The upload button should allow users to add images to the canvas. Think about file validation, generating unique IDs, and how the new layer integrates with your store.
-
-#### 4. Implement Layers Panel (`src/features/layers-panel/ui/`)
+#### 4. Implement Layers Panel (`src/widgets/layersPanel/ui/`)
 
 Build out `LayersPanel.tsx` and `LayerItem.tsx` to display and manage layers:
 
@@ -77,11 +77,9 @@ Build out `LayersPanel.tsx` and `LayerItem.tsx` to display and manage layers:
 
 Use the provided CSS Module with BEM conventions for styling.
 
-#### 5. Fix the Socket Bug & Wire Up Events
+#### 5. Wire Up Socket Events
 
-The provided `SocketStore.ts` has a bug that causes issues with Next.js. Identify and fix it.
-
-Then connect the socket events to your layers store so that remote layer additions and movements are reflected in the UI. The mock server simulates another user making changes.
+Connect the socket events (`src/shared/services/ws.ts`) to your layers store so that remote layer additions and movements are reflected in the UI. The mock server simulates another user making changes.
 
 **Note:** Pay attention to how the server sends position data.
 
@@ -94,7 +92,7 @@ When a layer is selected, display an "Apply Effect" button above the image on th
 3. Handle the server response - on success, a new layer with the processed image should appear
 4. Handle errors gracefully
 
-The server supports `grayscale` and `blur` effects. See `src/shared/types/index.ts` for the relevant type definitions.
+The server supports `grayscale` and `blur` effects. See `src/entities/image/model/types.ts` for the relevant type definitions.
 
 This tests your ability to:
 
@@ -121,16 +119,18 @@ This tests your ability to:
 ```
 src/
 ├── app/                    # Next.js App Router
+├── entities/               # Entity modules
+│   ├── image/              # Image effects
+│   └── layer/              # Layers module
 ├── features/               # Feature modules
+│   └── upload/            # Files upload feature
+├── widgets/               # Widget modules
 │   ├── canvas/            # Three.js canvas feature
 │   ├── toolbar/           # Top toolbar
-│   └── layers-panel/      # Layer management panel
-├── shared/                 # Shared utilities and components
-│   ├── lib/               # Helpers (BEM, etc.)
-│   ├── ui/                # Reusable UI components
-│   └── types/             # TypeScript types
-├── stores/                 # MobX stores
-└── services/              # External service integrations
+│   └── layersPanel/      # Layer management panel
+└── shared/                 # Shared utilities and components
+    ├── lib/               # Helpers (BEM, etc.)
+    └── ui/                # Reusable UI components
 ```
 
 ---

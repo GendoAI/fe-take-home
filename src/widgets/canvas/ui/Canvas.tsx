@@ -3,9 +3,9 @@
 import { Canvas as R3FCanvas } from '@react-three/fiber';
 import { observer } from 'mobx-react-lite';
 import { layersStore } from '@/entities/layer';
-import { CANVAS_CONFIG } from '@/shared/types';
+import { CANVAS_CONFIG } from './config';
 import { ImageLayer } from './ImageLayer';
-import styles from './canvas.module.css';
+import styles from './Canvas.module.css';
 
 /**
  * Main canvas component that renders the Three.js scene
@@ -47,9 +47,9 @@ export const Canvas = observer(function Canvas() {
         ))}
       </R3FCanvas>
 
-      <div className={styles['Canvas-status']}>
-        <div className={styles['Canvas-statusDot']} data-connected='false' />
-        <span className={styles['Canvas-statusText']}>Disconnected</span>
+      <div className={styles['Canvas-Status']}>
+        <div className={styles['Canvas-StatusDot']} data-connected='false' />
+        <span className={styles['Canvas-StatusText']}>Disconnected</span>
       </div>
     </div>
   );

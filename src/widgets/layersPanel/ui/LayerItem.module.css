@@ -1,0 +1,60 @@
+
+.LayerItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  margin-bottom: var(--spacing-xs);
+}
+
+.LayerItem:hover {
+  background-color: var(--color-bg-tertiary);
+}
+
+.LayerItem_selected {
+  background-color: var(--color-bg-tertiary);
+  outline: 1px solid var(--color-accent);
+  outline-offset: -1px;
+}
+
+.LayerItem-Thumbnail {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-primary);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.LayerItem-Info {
+  flex: 1;
+  min-width: 0;
+}
+
+.LayerItem-Name {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.LayerItem-Actions {
+  display: flex;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.LayerItem:hover .LayerItem-Actions {
+  opacity: 1;
+}
+
+.LayerItem-DeleteButton:hover {
+  color: var(--color-danger) !important;
+}

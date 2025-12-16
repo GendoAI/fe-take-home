@@ -22,8 +22,8 @@ const defaultOptions: BemOptions = {
  * const cnButton = cn('Button', styles);
  *
  * cnButton()                          // "Button"
- * cnButton('icon')                    // "Button-icon"
- * cnButton('icon', { size: 'lg' })    // "Button-icon Button-icon_size_lg"
+ * cnButton('Icon')                    // "Button-Icon"
+ * cnButton('Icon', { size: 'lg' })    // "Button-Icon Button-Icon_size_lg"
  * cnButton({ active: true })          // "Button Button_active"
  */
 export function withNaming(options: BemOptions = defaultOptions) {

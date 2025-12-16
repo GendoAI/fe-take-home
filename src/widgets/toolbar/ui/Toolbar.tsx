@@ -1,9 +1,9 @@
 'use client';
 
-import { observer } from 'mobx-react-lite';
+import { UploadButton } from '@/features/upload';
 import { cn } from '@/shared/lib';
-import { UploadButton } from './UploadButton';
-import styles from './toolbar.module.css';
+import { observer } from 'mobx-react-lite';
+import styles from './Toolbar.module.css';
 
 const cnToolbar = cn('Toolbar', styles);
 
@@ -13,19 +13,19 @@ const cnToolbar = cn('Toolbar', styles);
 export const Toolbar = observer(function Toolbar() {
   return (
     <header className={cnToolbar()}>
-      <div className={cnToolbar('section')}>
-        <h1 className={cnToolbar('title')}>Mini Canvas Studio</h1>
+      <div className={cnToolbar('Section')}>
+        <h1 className={cnToolbar('Title')}>Mini Canvas Studio</h1>
       </div>
 
-      <div className={cnToolbar('divider')} />
+      <div className={cnToolbar('Divider')} />
 
-      <div className={cnToolbar('section')}>
+      <div className={cnToolbar('Section')}>
         <UploadButton />
       </div>
 
-      <div className={cnToolbar('spacer')} />
+      <div className={cnToolbar('Spacer')} />
 
-      <div className={cnToolbar('section')}>
+      <div className={cnToolbar('Section')}>
         <span className={cnToolbar('hint')}>
           Drag images to reposition. Use the layers panel to manage.
         </span>

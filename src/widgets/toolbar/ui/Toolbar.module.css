@@ -7,31 +7,31 @@
   border-bottom: 1px solid var(--color-border);
 }
 
-.Toolbar-section {
+.Toolbar-Section {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
 }
 
-.Toolbar-divider {
+.Toolbar-Divider {
   width: 1px;
   height: 24px;
   background-color: var(--color-border);
   margin: 0 var(--spacing-sm);
 }
 
-.Toolbar-spacer {
+.Toolbar-Spacer {
   flex: 1;
 }
 
-.Toolbar-title {
+.Toolbar-Title {
   font-size: 16px;
   font-weight: 600;
   color: var(--color-text-primary);
   margin: 0;
 }
 
-.Toolbar-hint {
+.Toolbar-Hint {
   font-size: 12px;
   color: var(--color-text-muted);
 }

@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, forwardRef } from 'react';
 import { cn } from '@/shared/lib';
-import styles from './button.module.css';
+import styles from './Button.module.css';
 
 const cnButton = cn('Button', styles);
 

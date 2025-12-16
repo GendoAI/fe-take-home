@@ -3,7 +3,7 @@
 import { observer } from 'mobx-react-lite';
 import { cn } from '@/shared/lib';
 import { Icon } from '@/shared/ui';
-import styles from './layers-panel.module.css';
+import styles from './LayersPanel.module.css';
 
 const cnPanel = cn('LayersPanel', styles);
 
@@ -22,19 +22,19 @@ export const LayersPanel = observer(function LayersPanel() {
 
   return (
     <aside className={cnPanel()}>
-      <header className={cnPanel('header')}>
-        <div className={cnPanel('headerTitle')}>
+      <header className={cnPanel('Header')}>
+        <div className={cnPanel('HeaderTitle')}>
           <Icon name="layers" size={16} />
-          <h2 className={cnPanel('title')}>Layers</h2>
+          <h2 className={cnPanel('Title')}>Layers</h2>
         </div>
-        <span className={cnPanel('count')}>0</span>
+        <span className={cnPanel('Count')}>0</span>
       </header>
 
-      <div className={cnPanel('list')}>
+      <div className={cnPanel('List')}>
         {/* TODO: Render layers or empty state */}
-        <div className={cnPanel('empty')}>
+        <div className={cnPanel('Empty')}>
           <p>No layers yet</p>
-          <p className={cnPanel('emptyHint')}>Upload an image to get started</p>
+          <p className={cnPanel('EmptyHint')}>Upload an image to get started</p>
         </div>
       </div>
     </aside>
